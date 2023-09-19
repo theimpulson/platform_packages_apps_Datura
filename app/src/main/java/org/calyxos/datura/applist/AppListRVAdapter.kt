@@ -16,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Switch
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toDrawable
@@ -24,7 +25,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
-import com.google.android.material.materialswitch.MaterialSwitch
 import org.calyxos.datura.R
 import org.calyxos.datura.models.App
 import org.calyxos.datura.models.DaturaItem
@@ -142,7 +142,7 @@ class AppListRVAdapter @Inject constructor(
 
             // Switches, Checked/0 == Allowed to connect to internet (default)
             mapOfViewAndPolicy.forEach { (viewID, policy) ->
-                findViewById<MaterialSwitch>(viewID).apply {
+                findViewById<Switch>(viewID).apply {
                     setOnCheckedChangeListener(null)
                     isEnabled = app.requestsInternetPermission
                     isChecked =
@@ -200,7 +200,7 @@ class AppListRVAdapter @Inject constructor(
         rootView.apply {
             val settingsMode = findViewById<TextView>(R.id.settingsMode)
 
-            if (switches.all { findViewById<MaterialSwitch>(it).isChecked } || forceDefault) {
+            if (switches.all { findViewById<Switch>(it).isChecked } || forceDefault) {
                 settingsMode.text = context.getString(R.string.default_settings)
             } else {
                 settingsMode.text = context.getString(R.string.custom_settings)
