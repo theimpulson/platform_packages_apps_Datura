@@ -13,7 +13,7 @@ android_library_import {
         "//apex_available:anyapex",
     ],
     static_libs: [
-        "androidx.appcompat_appcompat",
+        "datura_androidx.appcompat_appcompat",
         "androidx.cardview_cardview",
         "androidx.coordinatorlayout_coordinatorlayout",
         "androidx-constraintlayout_constraintlayout",
@@ -42,7 +42,7 @@ android_library {
     manifest: "AndroidManifest.xml",
     static_libs: [
         "datura_com.google.android.material_material-nodeps",
-        "androidx.appcompat_appcompat",
+        "datura_androidx.appcompat_appcompat",
         "androidx.cardview_cardview",
         "androidx.coordinatorlayout_coordinatorlayout",
         "androidx-constraintlayout_constraintlayout",

@@ -1,0 +1,60 @@
+//
+// SPDX-FileCopyrightText: 2023 The Calyx Institute
+// SPDX-License-Identifier: Apache-2.0
+//
+
+android_library_import {
+    name: "datura_androidx.appcompat_appcompat-nodeps",
+    aars: ["appcompat-1.6.0-alpha04.aar"],
+    sdk_version: "31",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "14",
+    static_libs: [
+        "androidx.annotation_annotation",
+        "androidx.collection_collection",
+        "androidx.resourceinspection_resourceinspection-annotation",
+        "androidx.core_core",
+        "androidx.cursoradapter_cursoradapter",
+        "androidx.activity_activity",
+        "androidx.fragment_fragment",
+        "datura_androidx.appcompat_appcompat-resources",
+        "androidx.drawerlayout_drawerlayout",
+        "androidx.savedstate_savedstate",
+        "androidx.emoji2_emoji2",
+        "androidx.emoji2_emoji2-views-helper",
+        "androidx.lifecycle_lifecycle-runtime",
+        "androidx.lifecycle_lifecycle-viewmodel",
+    ],
+}
+
+android_library {
+    name: "datura_androidx.appcompat_appcompat",
+    sdk_version: "31",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    min_sdk_version: "14",
+    manifest: "AndroidManifest.xml",
+    static_libs: [
+        "datura_androidx.appcompat_appcompat-nodeps",
+        "androidx.annotation_annotation",
+        "androidx.collection_collection",
+        "androidx.resourceinspection_resourceinspection-annotation",
+        "androidx.core_core",
+        "androidx.cursoradapter_cursoradapter",
+        "androidx.activity_activity",
+        "androidx.fragment_fragment",
+        "datura_androidx.appcompat_appcompat-resources",
+        "androidx.drawerlayout_drawerlayout",
+        "androidx.savedstate_savedstate",
+        "androidx.emoji2_emoji2",
+        "androidx.emoji2_emoji2-views-helper",
+        "androidx.lifecycle_lifecycle-runtime",
+        "androidx.lifecycle_lifecycle-viewmodel",
+    ],
+    java_version: "1.7",
+}
